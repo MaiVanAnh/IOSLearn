@@ -10,13 +10,11 @@
 
 import UIKit
 
-class ConversionViewController : UIViewController {
+class ConversionViewController : UIViewController, UITextFieldDelegate {
     
-    //var value : Double?
+    @IBOutlet var celsiusLabel: UILabel!
     
-    @IBOutlet weak var celsiusLabel: UILabel!
-    
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet var textField: UITextField!
     
     var fahrenheitValue : Measurement<UnitTemperature>? {
         didSet {
@@ -27,8 +25,7 @@ class ConversionViewController : UIViewController {
     var celsiusValue : Measurement<UnitTemperature>? {
         if let fahrenheitValue = fahrenheitValue {
             return fahrenheitValue.converted(to: .celsius)
-        }
-        else {
+        } else {
             return nil
         }
     }
@@ -42,9 +39,9 @@ class ConversionViewController : UIViewController {
     }()
     
     func updateCelsiusLabel(){
-        if let celsiusValue = celsiusLabel {
-            celsiusLabel.text = "\(celsiusValue.hashValue)"
-            
+        if let celsiusValue = celsiusValue {
+            //celsiusLabel.text = "\(celsiusValue.value)"
+            celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue.value))
         }
         else {
             celsiusLabel.text = "???"
@@ -55,6 +52,43 @@ class ConversionViewController : UIViewController {
         super.viewDidLoad()
         
         updateCelsiusLabel()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range : NSRange, replacementString string: String) -> Bool {
+//        print("Current text: \(textField.text)")
+//        print("Replacement text : \(string)")
+//        return true
+        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        
+        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        
+        if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
+            return false
+        } else {
+            return true
+        }
+        
+        let lettersCharacters = NSCharacterSet.letters
+        
+        let containLetterCharacters = string.rangeOfCharacter(from: lettersCharacters)
+        
+        if containLetterCharacters != nil {
+            return false
+        } else {
+            return true
+        }
+        
+        let specialCharactors = ["!", "@", "#", "$", "%", "^", "&", "*"," "]
+        
+            for specialCharactor in specialCharactors {
+                if string == specialCharactor {
+                    print("Not allowed")
+                    return false
+                } else {
+                    return true
+                }
+            
+        }
     }
     
     @IBAction func dismissKeyboard(_ sender : AnyObject) {
@@ -70,13 +104,10 @@ class ConversionViewController : UIViewController {
 //            celsiusLabel.text = "???"
 //        }
         if let text = textField.text, let value = Double(text) {
-            fahrenheitValue = Measurement(value : value, unit : .fahrenheit)
+            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
         } else {
             fahrenheitValue = nil
         }
      }
-    
-
-    
-    
+ 
 }
