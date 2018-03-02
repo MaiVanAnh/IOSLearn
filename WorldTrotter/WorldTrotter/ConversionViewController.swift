@@ -58,36 +58,32 @@ class ConversionViewController : UIViewController, UITextFieldDelegate {
 //        print("Current text: \(textField.text)")
 //        print("Replacement text : \(string)")
 //        return true
+        let letterCharacters = NSCharacterSet.letters
+        
+        let spaceCharacters = NSCharacterSet.whitespacesAndNewlines
+        
+        let punctuationAndSpecialCharacters = CharacterSet.init(charactersIn: "!@#$%^&*")
+        
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
         
         let replacementTextHasDecimalSeparator = string.range(of: ".")
         
-        if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
+        let containLetterCharater = string.rangeOfCharacter(from: letterCharacters)
+        
+        let containSpaceAndNewLineCharacter = string.rangeOfCharacter(from: spaceCharacters)
+        
+        let containPunctuationAndSpecialCharacter = string.rangeOfCharacter(from: punctuationAndSpecialCharacters)
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
+            return false
+        } else if containLetterCharater != nil {
+            return false
+        } else if containSpaceAndNewLineCharacter != nil {
+            return false
+        } else if containPunctuationAndSpecialCharacter != nil {
             return false
         } else {
             return true
-        }
-        
-        let lettersCharacters = NSCharacterSet.letters
-        
-        let containLetterCharacters = string.rangeOfCharacter(from: lettersCharacters)
-        
-        if containLetterCharacters != nil {
-            return false
-        } else {
-            return true
-        }
-        
-        let specialCharactors = ["!", "@", "#", "$", "%", "^", "&", "*"," "]
-        
-            for specialCharactor in specialCharactors {
-                if string == specialCharactor {
-                    print("Not allowed")
-                    return false
-                } else {
-                    return true
-                }
-            
         }
     }
     
