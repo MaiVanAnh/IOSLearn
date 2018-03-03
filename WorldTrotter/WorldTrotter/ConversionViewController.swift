@@ -50,10 +50,25 @@ class ConversionViewController : UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("ConversionViewController loaded its view.")
         updateCelsiusLabel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        //dateFormatter.dateStyle = .full
+        dateFormatter.dateFormat = "HH"
+        var convertDate = dateFormatter.string(from: currentDate)
+        print(convertDate)
+        var convertHour = Int(convertDate)
+        if let convertHour = convertHour, convertHour >= 17 {
+            self.view.backgroundColor = UIColor.black
+        }
+    }
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range : NSRange, replacementString string: String) -> Bool {
 //        print("Current text: \(textField.text)")
 //        print("Replacement text : \(string)")
@@ -62,7 +77,7 @@ class ConversionViewController : UIViewController, UITextFieldDelegate {
         
         let spaceCharacters = NSCharacterSet.whitespacesAndNewlines
         
-        let punctuationAndSpecialCharacters = CharacterSet.init(charactersIn: "!@#$%^&*")
+        let punctuationAndSpecialCharacters = CharacterSet(charactersIn: "!@#$%^&*")
         
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
         
