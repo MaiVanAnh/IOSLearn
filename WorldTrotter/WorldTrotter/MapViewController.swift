@@ -32,7 +32,9 @@ class MapViewController : UIViewController {
         
         view.addSubview(segmentedControl)
         
-        let topContraint = segmentedControl.topAnchor.constraint(equalTo: view.topAnchor)
+        //let topContraint = segmentedControl.topAnchor.constraint(equalTo: view.topAnchor)
+        
+        let topContraint = segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
         
         let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         
