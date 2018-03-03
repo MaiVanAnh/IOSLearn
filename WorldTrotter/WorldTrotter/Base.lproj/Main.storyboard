@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9yK-6n-20S"/>
                         <segue destination="GUE-gp-xn9" kind="relationship" relationship="viewControllers" id="OyC-95-gd9"/>
+                        <segue destination="qfA-9x-9F7" kind="relationship" relationship="viewControllers" id="cgh-Ks-dIL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dib-v4-RZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,6 +119,16 @@
             </objects>
             <point key="canvasLocation" x="-452" y="62"/>
         </scene>
+        <!--Web-->
+        <scene sceneID="XYg-yx-xu8">
+            <objects>
+                <viewController id="qfA-9x-9F7" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Web" image="icons8-internet-filled-50" id="r2W-Fc-iMy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbm-cz-Q6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452" y="739"/>
+        </scene>
         <!--Map-->
         <scene sceneID="8f5-Xh-Yh0">
             <objects>
@@ -132,5 +143,6 @@
     <resources>
         <image name="ConvertIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
+        <image name="icons8-internet-filled-50" width="25" height="25"/>
     </resources>
 </document>
