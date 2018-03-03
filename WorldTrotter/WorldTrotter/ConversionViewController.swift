@@ -61,9 +61,9 @@ class ConversionViewController : UIViewController, UITextFieldDelegate {
         dateFormatter.locale = Locale.current
         //dateFormatter.dateStyle = .full
         dateFormatter.dateFormat = "HH"
-        var convertDate = dateFormatter.string(from: currentDate)
+        let convertDate = dateFormatter.string(from: currentDate)
         print(convertDate)
-        var convertHour = Int(convertDate)
+        let convertHour = Int(convertDate)
         if let convertHour = convertHour, convertHour >= 17 {
             self.view.backgroundColor = UIColor.black
         }
