@@ -32,7 +32,7 @@ class MapViewController : UIViewController, MKMapViewDelegate {
     
     var string3 = "Tam Ki"
     
-    var string3s = "The place Where i would like to visit"
+    var string3s = "The place where i would like to visit"
     
     override func loadView() {
         // create map view
