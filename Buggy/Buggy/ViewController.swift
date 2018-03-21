@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         let array = NSMutableArray()
     
         for i in 0..<10 {
-            array.insert(i, at: 1)
+            array.insert(i, at: i)
         }
         
         // go to step too far emptying the array (notice the range change)
