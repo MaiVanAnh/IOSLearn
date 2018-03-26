@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let itemStore = ItemStore()
         
+        print("here is normal")
+        
         let itemsController = window!.rootViewController as! ItemsViewController
         
         itemsController.itemStore = itemStore

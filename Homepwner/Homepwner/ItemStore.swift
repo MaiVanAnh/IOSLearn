@@ -14,6 +14,7 @@ class ItemStore {
     
     var allItems = [Item]()
     
+    // tai sao can @... nay
     @discardableResult func createItem() ->Item {
         let newItem = Item(random: true)
         
