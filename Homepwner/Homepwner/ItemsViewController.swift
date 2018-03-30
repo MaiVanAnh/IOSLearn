@@ -16,7 +16,13 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemStore.allItems.count	
+//        switch section {
+//        case 1:
+//            return itemStore.allItems.count
+//        default:
+//            return itemStore.allItems.count + 1
+//        }
+        return itemStore.allItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
