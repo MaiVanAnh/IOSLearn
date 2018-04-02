@@ -15,13 +15,21 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
+    @IBAction func addNewItem(_ sender: UIButton) {
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch section {
-//        case 1:
-//            return itemStore.allItems.count
-//        default:
-//            return itemStore.allItems.count + 1
-//        }
+
         return itemStore.allItems.count
     }
     
