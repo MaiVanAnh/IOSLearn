@@ -58,28 +58,52 @@ class ItemsViewController: UITableViewController {
             present(ac, animated: true, completion: nil)
         }
     }
-    
+    //  bronze challenge
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Remove"
+    }
+    //  siler challenge
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if (indexPath.row >= itemStore.allItems.count) {
+            return false
+        } else {
+            return true
+        }
+    }
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        if (destinationIndexPath.row < itemStore.allItems.count) {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        } else {
+            itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row - 1)
+        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return itemStore.allItems.count
+        return itemStore.allItems.count + 1
     }
-    
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if (proposedDestinationIndexPath.row >= itemStore.allItems.count) {
+            return sourceIndexPath
+        }
+        return proposedDestinationIndexPath
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        
-        
-        let item = itemStore.allItems[indexPath.row]
-        
-        cell.textLabel?.text = item.name
-        
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-        
-        return cell
+        if indexPath.row < itemStore.allItems.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            
+            let item = itemStore.allItems[indexPath.row]
+            
+            cell.textLabel?.text = item.name
+            
+            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            
+            return cell
+        } else {
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
+            cell.textLabel?.text = "No more Items!"
+            return cell
+        }
     }
     
     override func viewDidLoad() {

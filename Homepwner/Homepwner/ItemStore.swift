@@ -37,8 +37,6 @@ class ItemStore {
         allItems.remove(at: fromIndex)
         
         allItems.insert(movedItem, at: toIndex)
-        
-        
     }
 //    init() {
 //        for _ in 0..<15 {
