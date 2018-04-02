@@ -24,11 +24,11 @@ class ItemStore {
         
     }
     
-    init() {
-        for _ in 0..<15 {
-            
-            createItem()
-            
-        }
-    }
+//    init() {
+//        for _ in 0..<15 {
+//            
+//            createItem()
+//            
+//        }
+//    }
 }
