@@ -113,6 +113,11 @@
                                         <constraint firstAttribute="bottom" secondItem="gg9-iP-G0b" secondAttribute="bottom" constant="2" id="wTr-1m-FSu"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="RC1-8w-Hn9" id="IGB-J5-9L0"/>
+                                    <outlet property="serialNumberLabel" destination="gg9-iP-G0b" id="JCr-LO-DXE"/>
+                                    <outlet property="valueLabel" destination="2px-rK-1XR" id="7VC-ij-4iJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
