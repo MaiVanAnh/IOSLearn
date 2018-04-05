@@ -94,10 +94,6 @@ class ItemsViewController: UITableViewController {
             
             let item = itemStore.allItems[indexPath.row]
             
-            //cell.textLabel?.text = item.name
-            
-           // cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-            
             cell.nameLabel.text = item.name
             
             cell.serialNumberLabel.text = item.serialNumber
@@ -119,9 +115,15 @@ class ItemsViewController: UITableViewController {
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        
         tableView.contentInset = insets
         
         tableView.scrollIndicatorInsets = insets
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.estimatedRowHeight = 65
+        
         
     }
     
