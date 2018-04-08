@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+class ItemCell: UITableViewCell{
 
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -25,5 +25,13 @@ class ItemCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        
+//        nameLabel.adjustsFontForContentSizeCategory = true
+//        serialNumberLabel.adjustsFontForContentSizeCategory = true
+//        valueLabel.adjustsFontForContentSizeCategory = true
+//    }
+    
 }

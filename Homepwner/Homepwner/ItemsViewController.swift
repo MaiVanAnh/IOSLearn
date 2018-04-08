@@ -100,6 +100,13 @@ class ItemsViewController: UITableViewController {
             
             cell.valueLabel.text = "$\(item.valueInDollars)"
             
+            if item.valueInDollars < 50 {
+                cell.valueLabel.textColor = UIColor.red
+                //print("here")
+            } else {
+                cell.valueLabel.textColor = UIColor.green
+            }
+            
             return cell
         } else {
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
