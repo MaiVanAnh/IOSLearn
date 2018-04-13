@@ -133,5 +133,16 @@ class ItemsViewController: UITableViewController {
         
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showItem"?:
+            if let row = tableView.indexPathForSelectedRow?.row{
+                let item = itemStore.allItems[row]
+                let detailView = segue.destination as! DetailViewController
+                detailView.item = item
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+    }
 }

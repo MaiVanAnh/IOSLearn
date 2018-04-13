@@ -17,7 +17,9 @@ class ItemCell: UITableViewCell{
     @IBOutlet weak var serialNumberLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        nameLabel.adjustsFontForContentSizeCategory = true
+        valueLabel.adjustsFontForContentSizeCategory = true
+        serialNumberLabel.adjustsFontForContentSizeCategory = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,12 +28,6 @@ class ItemCell: UITableViewCell{
         // Configure the view for the selected state
     }
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        
-//        nameLabel.adjustsFontForContentSizeCategory = true
-//        serialNumberLabel.adjustsFontForContentSizeCategory = true
-//        valueLabel.adjustsFontForContentSizeCategory = true
-//    }
+    
     
 }
