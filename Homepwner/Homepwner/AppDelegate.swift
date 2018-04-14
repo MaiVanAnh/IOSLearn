@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //create an ItemStore
         
         let itemStore = ItemStore()
+
+        let navController = window?.rootViewController as! UINavigationController
         
-        print("here is normal")
-        
-        let itemsController = window!.rootViewController as! ItemsViewController
+        let itemsController = navController.topViewController as! ItemsViewController
         
         itemsController.itemStore = itemStore
         
