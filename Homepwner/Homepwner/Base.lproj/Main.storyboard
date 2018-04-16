@@ -159,6 +159,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="M84-pM-iXO" id="gT0-fB-THK"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -176,6 +179,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="M84-pM-iXO" id="fR5-0g-tkd"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -193,6 +199,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="M84-pM-iXO" id="xj2-js-BFt"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -210,6 +219,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="GG0-Sw-Mdn" firstAttribute="trailing" secondItem="gUk-Rf-5qE" secondAttribute="trailing" constant="8" id="Tl6-il-aCL"/>
                             <constraint firstItem="GG0-Sw-Mdn" firstAttribute="bottom" secondItem="gUk-Rf-5qE" secondAttribute="bottom" constant="8" id="XDb-If-Pkz"/>
@@ -217,6 +227,9 @@
                             <constraint firstItem="gUk-Rf-5qE" firstAttribute="leading" secondItem="GG0-Sw-Mdn" secondAttribute="leading" constant="8" id="vqA-dv-VSD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GG0-Sw-Mdn"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Z6F-yG-3F3" appends="YES" id="ieT-Re-Sqy"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="TNI-Od-K1Q" id="ulc-tX-bzM"/>
@@ -226,6 +239,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6p-3B-Igf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Z6F-yG-3F3">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="M84-pM-iXO" id="6jm-cM-2p5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1424.8" y="-24.7376311844078"/>
         </scene>
