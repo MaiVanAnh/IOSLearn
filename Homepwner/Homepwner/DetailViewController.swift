@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet var imageView: UIImageView!
     
     var item: Item! {
@@ -18,6 +18,28 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController();
+        
+        // neu thiet bi co camera thi chup anh, neu khong thi den thu vien anh
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.sourceType = .camera
+        }
+        else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // lay hinh anh tu thu vien
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // hien thi anh len man hinh detailItemController
+        imageView.image = image
+        
+        // phai goi phuong thuc bo qua nay
+        dismiss(animated: true, completion: nil)
     }
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
