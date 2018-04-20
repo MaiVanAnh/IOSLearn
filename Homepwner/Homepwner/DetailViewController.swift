@@ -17,6 +17,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func takePicture(_ sender: UIBarButtonItem) {
+    }
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal

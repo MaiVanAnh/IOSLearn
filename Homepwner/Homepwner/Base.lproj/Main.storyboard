@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gUk-Rf-5qE">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
+                                <rect key="frame" x="8" y="72" width="359" height="543"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zjr-ib-bw0">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
@@ -202,7 +202,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Fjv-ja-EKC">
-                                        <rect key="frame" x="0.0" y="152" width="359" height="435"/>
+                                        <rect key="frame" x="0.0" y="152" width="359" height="391"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -210,13 +210,29 @@
                                     <constraint firstItem="GoN-4X-XWX" firstAttribute="leading" secondItem="bNx-Z6-rP3" secondAttribute="leading" id="UJM-CZ-bdL"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idx-Qc-pJe">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Rbl-jI-N00"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="4lf-Yw-sbw">
+                                        <connections>
+                                            <action selector="takePicture:" destination="M84-pM-iXO" id="6v4-b6-ClA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="idx-Qc-pJe" firstAttribute="trailing" secondItem="GG0-Sw-Mdn" secondAttribute="trailing" id="91j-Ga-xLh"/>
+                            <constraint firstItem="idx-Qc-pJe" firstAttribute="leading" secondItem="GG0-Sw-Mdn" secondAttribute="leading" id="Ioj-Kd-6mn"/>
+                            <constraint firstItem="GG0-Sw-Mdn" firstAttribute="bottom" secondItem="idx-Qc-pJe" secondAttribute="bottom" id="PGx-sE-E8C"/>
                             <constraint firstItem="GG0-Sw-Mdn" firstAttribute="trailing" secondItem="gUk-Rf-5qE" secondAttribute="trailing" constant="8" id="Tl6-il-aCL"/>
-                            <constraint firstItem="GG0-Sw-Mdn" firstAttribute="bottom" secondItem="gUk-Rf-5qE" secondAttribute="bottom" constant="8" id="XDb-If-Pkz"/>
                             <constraint firstItem="gUk-Rf-5qE" firstAttribute="top" secondItem="GG0-Sw-Mdn" secondAttribute="top" constant="8" id="qvC-RL-0be"/>
+                            <constraint firstItem="idx-Qc-pJe" firstAttribute="top" secondItem="gUk-Rf-5qE" secondAttribute="bottom" constant="8" id="taD-Ar-zWG"/>
                             <constraint firstItem="gUk-Rf-5qE" firstAttribute="leading" secondItem="GG0-Sw-Mdn" secondAttribute="leading" constant="8" id="vqA-dv-VSD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GG0-Sw-Mdn"/>
