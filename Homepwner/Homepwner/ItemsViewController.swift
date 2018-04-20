@@ -114,14 +114,10 @@ class ItemsViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
-        
+
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.estimatedRowHeight = 65
-        
-        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

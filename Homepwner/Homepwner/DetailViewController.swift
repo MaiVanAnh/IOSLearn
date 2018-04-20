@@ -9,7 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate {
-
+    @IBOutlet var imageView: UIImageView!
+    
     var item: Item! {
         didSet{
             navigationItem.title = item.name
