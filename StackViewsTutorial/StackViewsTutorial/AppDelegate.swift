@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Homepwner
+//  StackViewsTutorial
 //
-//  Created by Van Anh on 3/9/18.
+//  Created by Van Anh on 4/14/18.
 //  Copyright © 2018 Van Anh. All rights reserved.
 //
 
@@ -16,17 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        //create an ItemStore
-        
-        let itemStore = ItemStore()
-			
-        let navController = window?.rootViewController as! UINavigationController
-        
-        let itemsController = navController.topViewController as! ItemsViewController
-        
-        itemsController.itemStore = itemStore
-        
         return true
     }
 

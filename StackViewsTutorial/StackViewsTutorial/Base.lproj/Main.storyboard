@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StackViewsTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dhC-XE-47N">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="28p-V0-StJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-KJ-IYu">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="192.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh1" translatesAutoresizingMaskIntoConstraints="NO" id="mpY-9e-xvz">
+                                                <rect key="frame" x="0.0" y="212.5" width="375" height="192"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh2" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-cU-Pzy">
+                                                <rect key="frame" x="0.0" y="424.5" width="375" height="192.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3eJ-Zd-CrV">
+                                        <rect key="frame" x="0.0" y="617" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsz-pN-9CP">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
+                                                <state key="normal" title="Hide image 1"/>
+                                                <connections>
+                                                    <action selector="onButton1Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcu-ee-GOY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8r-vO-Vc9">
+                                                <rect key="frame" x="140.5" y="0.0" width="91" height="30"/>
+                                                <state key="normal" title="Hide image 2"/>
+                                                <connections>
+                                                    <action selector="onButton2Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Do-n9-D5i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7p-jp-5O3">
+                                                <rect key="frame" x="284" y="0.0" width="91" height="30"/>
+                                                <state key="normal" title="Hide image 3"/>
+                                                <connections>
+                                                    <action selector="onButton3Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="25F-U4-0eR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dhC-XE-47N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gqa-oC-lTb"/>
+                            <constraint firstAttribute="bottom" secondItem="dhC-XE-47N" secondAttribute="bottom" id="Wsn-Rl-nb2"/>
+                            <constraint firstItem="dhC-XE-47N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aOh-OP-xgK"/>
+                            <constraint firstAttribute="trailing" secondItem="dhC-XE-47N" secondAttribute="trailing" id="sTH-Hb-CPO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="lsz-pN-9CP" id="UYA-Qn-8FZ"/>
+                        <outlet property="button2" destination="g8r-vO-Vc9" id="en2-jF-5uN"/>
+                        <outlet property="button3" destination="t7p-jp-5O3" id="BXG-wm-4pc"/>
+                        <outlet property="image1" destination="asJ-KJ-IYu" id="qXg-nY-xCm"/>
+                        <outlet property="image2" destination="mpY-9e-xvz" id="YHt-gb-YzZ"/>
+                        <outlet property="image3" destination="ScE-cU-Pzy" id="xI7-M7-hiK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="anh" width="720" height="960"/>
+        <image name="anh1" width="720" height="960"/>
+        <image name="anh2" width="720" height="960"/>
+    </resources>
+</document>

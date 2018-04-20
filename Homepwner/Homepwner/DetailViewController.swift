@@ -75,4 +75,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "changeDate"?:
+            let dateCreatedViewController = segue.destination as! DateCreatedViewController
+            dateCreatedViewController.item = item
+        default:
+            preconditionFailure("Error")
+        }
+    }
+    
 }
