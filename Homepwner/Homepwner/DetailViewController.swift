@@ -38,6 +38,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // lay hinh anh tu thu vien
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
+        
+        // luu buc anh trong image store cho khoa cua item
+        imageStore.setImage(image, forKey: item.itemKey!)
         // hien thi anh len man hinh detailItemController
         imageView.image = image
         
