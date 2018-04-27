@@ -22,6 +22,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController();
+       //bronze challenge
+        imagePicker.allowsEditing = true
         
         // neu thiet bi co camera thi chup anh, neu khong thi den thu vien anh
         if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -31,14 +33,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             imagePicker.sourceType = .photoLibrary
         }
         imagePicker.delegate = self
-        
+
         present(imagePicker, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // lay hinh anh tu thu vien
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage // 14: bronze
+  
         // luu buc anh trong image store cho khoa cua item
         imageStore.setImage(image, forKey: item.itemKey!)
         // hien thi anh len man hinh detailItemController
@@ -72,15 +73,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
         nameField.text = item.name
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        // get the item key
+        let key = item.itemKey
+        // neu co so lien ket anh voi item
+        // bieu dien no len imageView
+        let imageToDisplay = imageStore.image(forKey: key!)
+        imageView.image = imageToDisplay
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -95,6 +101,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         } else {
             item.valueInDollars = 0
         }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -115,5 +122,4 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             preconditionFailure("Error")
         }
     }
-    
 }
