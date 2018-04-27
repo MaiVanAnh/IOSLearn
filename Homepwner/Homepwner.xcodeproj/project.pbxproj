@@ -16,9 +16,9 @@
 		FF2B957B2052BB03007321FA /* HomepwnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B957A2052BB03007321FA /* HomepwnerTests.swift */; };
 		FF2B95862052BB03007321FA /* HomepwnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B95852052BB03007321FA /* HomepwnerUITests.swift */; };
 		FF3909F320809A7A00DA6E00 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3909F220809A7A00DA6E00 /* DetailViewController.swift */; };
+		FF514A17209354E400A2D1A9 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF514A16209354E400A2D1A9 /* ImageStore.swift */; };
 		FF728A212052BF8D0011A0DA /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF728A202052BF8D0011A0DA /* ItemsViewController.swift */; };
 		FFA55BC3208662B20070FBE2 /* DateCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA55BC2208662B20070FBE2 /* DateCreatedViewController.swift */; };
-		FFCA972B208A437500140AD5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA972A208A437500140AD5 /* ImageView.swift */; };
 		FFD6530B207487A5003DFC56 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD6530A207487A5003DFC56 /* ItemCell.swift */; };
 		FFD8AC052062BD86003FF039 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8AC042062BD86003FF039 /* ItemStore.swift */; };
 /* End PBXBuildFile section */
@@ -56,9 +56,9 @@
 		FF2B95852052BB03007321FA /* HomepwnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepwnerUITests.swift; sourceTree = "<group>"; };
 		FF2B95872052BB03007321FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF3909F220809A7A00DA6E00 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FF514A16209354E400A2D1A9 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		FF728A202052BF8D0011A0DA /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		FFA55BC2208662B20070FBE2 /* DateCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCreatedViewController.swift; sourceTree = "<group>"; };
-		FFCA972A208A437500140AD5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		FFD6530A207487A5003DFC56 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FFD8AC042062BD86003FF039 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +123,7 @@
 				FF3909F220809A7A00DA6E00 /* DetailViewController.swift */,
 				FF014F4320865C9B009A6C35 /* CustomTextField.swift */,
 				FFA55BC2208662B20070FBE2 /* DateCreatedViewController.swift */,
-				FFCA972A208A437500140AD5 /* ImageView.swift */,
+				FF514A16209354E400A2D1A9 /* ImageStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -283,10 +283,10 @@
 				FF014F4420865C9B009A6C35 /* CustomTextField.swift in Sources */,
 				FF728A212052BF8D0011A0DA /* ItemsViewController.swift in Sources */,
 				FF24CBAC2052DDBD00005A4C /* Item.swift in Sources */,
+				FF514A17209354E400A2D1A9 /* ImageStore.swift in Sources */,
 				FFD8AC052062BD86003FF039 /* ItemStore.swift in Sources */,
 				FF3909F320809A7A00DA6E00 /* DetailViewController.swift in Sources */,
 				FF2B95662052BB03007321FA /* AppDelegate.swift in Sources */,
-				FFCA972B208A437500140AD5 /* ImageView.swift in Sources */,
 				FFD6530B207487A5003DFC56 /* ItemCell.swift in Sources */,
 				FFA55BC3208662B20070FBE2 /* DateCreatedViewController.swift in Sources */,
 			);

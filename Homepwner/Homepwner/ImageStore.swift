@@ -1,8 +1,8 @@
 //
-//  ImageView.swift
+//  ImageStore.swift
 //  Homepwner
 //
-//  Created by Van Anh on 4/20/18.
+//  Created by Van Anh on 4/27/18.
 //  Copyright © 2018 Van Anh. All rights reserved.
 //
 

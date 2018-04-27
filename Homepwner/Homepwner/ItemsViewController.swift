@@ -15,6 +15,7 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
+    var imageStore: ImageStore!
     @IBAction func addNewItem(_ sender: AnyObject?) {
         
         let newItem = itemStore.createItem()
@@ -126,6 +127,7 @@ class ItemsViewController: UITableViewController {
                 let item = itemStore.allItems[row]
                 let detailView = segue.destination as! DetailViewController
                 detailView.item = item
+                detailView.imageStore = imageStore
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
