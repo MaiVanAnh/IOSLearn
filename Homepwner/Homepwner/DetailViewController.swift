@@ -19,6 +19,29 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imageStore : ImageStore!
     
+    @IBAction func deletePicture(_ sender: UIBarButtonItem) {
+        
+        let title = "Delete \(item.name) image"
+        
+        let message = "Are you sure you want to detele this image?"
+        
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            
+            self.imageStore.deleteImage(forKey: self.item.itemKey!)
+            
+            self.imageView.image = nil
+        }
+        
+        ac.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        ac.addAction(cancelAction)
+        
+        present(ac, animated: true, completion: nil)
+    }
     
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController();
